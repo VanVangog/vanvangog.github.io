@@ -1,0 +1,25 @@
+.magicSlide{width: 100%;height: 100%;position: absolute;top: 0px;left: 0;box-sizing: border-box;padding: 10px;padding-top:40px;padding-right: 150px;}
+.magicSlide .toolbars{position:absolute;top:0px;height:40px;padding-top: 9px;}
+.magicSlide .toolbars.top{}
+.magicSlide .toolbars button{}
+.magicSlide .layers{position:absolute;width:150px;background-color:#999;height:100%;right:0px;top:0px;}
+.magicSlide .layers .title{color:#fff;border-bottom:1px solid red;text-align:center;padding: 10px;}
+.magicSlide .layers ul{list-style:none;padding: 0px;margin: 0px;overflow: scroll;height: calc(100% - 40px);}
+.magicSlide .layers ul li{}
+.magicSlide .layers ul li a{padding: 5px;display: block;cursor: pointer;}
+.magicSlide .elements{position:absolute;top:40px;right:150px;left:10px;bottom:10px;background-color: #eee;overflow:hidden;}
+.magicSlide .slide-element{position:absolute;left:0px;top:0px;}
+.magicSlide .slide-element.--text{width:100px;height:50px;text-align:center;}
+.magicSlide .slide-element.--active{background-color:yellow;}
+.magicSlide .slide-element.--resize{}
+.magicSlide .slide-element.--resize .conner{position:absolute;width:10px;height: 10px;background-color:green;border-radius:50%;}
+.magicSlide .slide-element.--resize .conner.lt{left: -5px;top: -5px;cursor: nw-resize;}
+.magicSlide .slide-element.--resize .conner.rt{right: -5px;top: -5px;cursor: ne-resize;}
+.magicSlide .slide-element.--resize .conner.lb{left: -5px;bottom: -5px;cursor: sw-resize;}
+.magicSlide .slide-element.--resize .conner.rb{right: -5px;bottom: -5px;cursor: se-resize;}
+#for_delay, #for_duration{width:50px;}
+#modal{width:100%;height:100%;position:fixed;left:-100%;top:0px;opacity:0;transition:0.5s;background-color:#fff;}
+#modal.show{opacity:1;left:0px;}
+#modal .close{width:50px;height:50px;background-color:#ddd;color:red;text-align:center;line-height:50px;top:10px;right:10px;border-radius:50%;cursor:pointer;position:absolute;z-index:999;}
+#modal .close:before{content:"╳";}
+#modal .content{width:100%;height:100%;left:0px;top:0px;position:absolute;}
