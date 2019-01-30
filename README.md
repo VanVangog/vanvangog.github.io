@@ -1,1 +1,1 @@
-# vanvangog
+# magicSlides
