@@ -21,7 +21,7 @@
 .magicSlide .slide-element.--active .move_bar:before{content:"M";}
 .magicSlide .slide-element.--active:hover .move_bar{display: block;}
 .magicSlide .slide-element .text_bar{padding-left: 30px;height: 100%;cursor:text;font-family: Arial;}
-.magicSlide .slide-element .text_bar textarea{width: 100%;background: none;height: 100%;resize: none;padding: 0px;margin: 0px;border: none;outline: none;font-size:16px;font-family: Arial;position: relative;z-index:2;overflow:hidden;}
+.magicSlide .slide-element .text_bar textarea{width: 100%;background: none;height: 100%;resize: none;padding: 0px;margin: 0px;border: none;outline: none;font-size:16px;font-family: Arial;position: relative;z-index:2;overflow:hidden;word-break: break-all;}
 .magicSlide .slide-element .text_bar .sizer{position: absolute;left: 0px;top: 0px;padding-left: 30px;box-sizing: border-box;z-index:1;opacity:0;}
 .magicSlide .slide-element .image_bar{width:100%;height:100%;}
 .magicSlide .slide-element .image_bar img{width:100%;height:100%;}
