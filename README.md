@@ -30,18 +30,19 @@ All blocks can be animated by using simple animations:
     * Image url
 * Animation duration in ms
 * Delay before block animation in ms
+* Localizations: Russian, English
 * Simple preview
 ---
 ## *Roadmap*
 ---
-- Responsive slides
-- Text color by picker
-- Append video
-- Upload image
-- Custom animations
-- Plugin settings
-- Grouped layers
-- Nice design
-- Animations for groups
-- Slideshow creation
-- Export slideshow to one page in HTML
+- ✘ Responsive slides
+- ✘ Text color by picker
+- ✘ Append video
+- ✘ Upload image
+- ✘ Custom animations
+- ✘ Plugin settings
+- ✘ Grouped layers
+- ✘ Nice design
+- ✘ Animations for groups
+- ✘ Slideshow creation
+- ✘ Export slideshow to one page in HTML

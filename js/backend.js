@@ -6,7 +6,80 @@
 			'height'		: false,
 			'toolsPosition' : 'top',
 			'useCustomCSS'	: false,
+			'lang'			: 'en',
 		}, options);
+		var lang = {
+			"ru":{
+				"toolbar":"Панель инструментов",
+				"text":"Текст",
+				"image":"Картинка",
+				"video":"Видео",
+				"append_element":"Добавить элемент",
+				"rezise":"Измененить размеры",
+				"settings_text":"Настройки текста",
+				"settings_image":"Настройки изображения",
+				"settings_video":"Настройки видео",
+				"align_left":"По левому краю",
+				"align_center":"По центру",
+				"align_right":"По правому краю",
+				"black":"Черный",
+				"white":"Белый",
+				"red":"Красный",
+				"green":"Зеленый",
+				"blue":"Синий",
+				"yellow":"Желтый",
+				"img_src":"Ссылка на картинку",
+				"delay":"Задержка(мс)",
+				"no_animation":"Без анимации",
+				"fade":"Появление",
+				"slide_down":"Скольжение сверху",
+				"slide_up":"Скольжение снизу",
+				"slide_left":"Скольжение слева",
+				"slide_right":"Скольжение справа",
+				"animation_duration":"Скорость анимации(мс)",
+				"preview":"Просмотр",
+				"layers":"Элементы",
+				"text_block":"Текстовый элемент",
+				"align":"Выравнивание",
+				"font_size":"Размер",
+				"color":"Цвет",
+			},
+			"en":{
+				"toolbar":"Toolbar",
+				"text":"Text",
+				"image":"Image",
+				"video":"Video",
+				"append_element":"Append block",
+				"rezise":"Resize",
+				"settings_text":"Text settings",
+				"settings_image":"Image settings",
+				"settings_video":"Video settings",
+				"align_left":"Left side",
+				"align_center":"Center",
+				"align_right":"Right side",
+				"black":"Black",
+				"white":"White",
+				"red":"Red",
+				"green":"Green",
+				"blue":"Blue",
+				"yellow":"Yellow",
+				"img_src":"Image source",
+				"delay":"Delay(ms)",
+				"no_animation":"Not animated",
+				"fade":"Fade in",
+				"slide_down":"Slide up to down",
+				"slide_up":"Slide down to up",
+				"slide_left":"Slide left to right",
+				"slide_right":"Slide right to left",
+				"animation_duration":"Animation duration(ms)",
+				"preview":"Preview",
+				"layers":"Blocks",
+				"text_block":"Text block",
+				"align":"Align",
+				"font_size":"Size",
+				"color":"Color",
+			}
+		}
 		var layers = []
 		var layersHTML = "";
 		var maxID = 1;
@@ -27,19 +100,19 @@
 		.append('<div class="elements">'+this.html()+'</div>')
 		.append('<div class="toolbars"></div>')
 		.find(".toolbars")
-		.append('<div class="toolbars__top">Панель инструментов<br><button id="toolbars_pos_left">⇤</button><button id="toolbars_pos_right">⇥</button><button id="toolbars_pos_top">⤒</button><button id="toolbars_pos_bottom">⤓</button></div>')
-		.append('<select id="for_type"><option value="1">Текст</option><option value="2">Картинка</option><option value="3">Видео</option></select> -> ')
-		.append('<button id="append_element">Добавить элемент</button><br>')
-		.append('<button title="Изменение размеров" class="tool-resize">Изменить размеры</button><br>')
-		.append('<div class="toolset --text">Настройки текста<br></div>')
-		.append('<div class="toolset --image">Настройки изображения<br></div>')
-		.append('<div class="toolset --video">Настройки видео<br></div>')
+		.append('<div class="toolbars__top">'+lang[settings.lang].toolbar+'<br><button id="toolbars_pos_left">⇤</button><button id="toolbars_pos_right">⇥</button><button id="toolbars_pos_top">⤒</button><button id="toolbars_pos_bottom">⤓</button></div>')
+		.append('<select id="for_type"><option value="1">'+lang[settings.lang].text+'</option><option value="2">'+lang[settings.lang].image+'</option><option value="3">'+lang[settings.lang].video+'</option></select> -> ')
+		.append('<button id="append_element">'+lang[settings.lang].append_element+'</button><br>')
+		.append('<button class="tool-resize">'+lang[settings.lang].rezise+'</button><br>')
+		.append('<div class="toolset --text">'+lang[settings.lang].settings_text+'<br></div>')
+		.append('<div class="toolset --image">'+lang[settings.lang].settings_image+'<br></div>')
+		.append('<div class="toolset --video">'+lang[settings.lang].settings_video+'<br></div>')
 		// Добавление панели настроек текста
 		.find('.toolset.--text')
 		.append('Стили: <button id="set_bold"><b>B</b></button>')
 		.append('<button id="set_italic"><i>I</i></button>')
 		.append('<button id="set_underline"><u>U</u></button><br>')
-		.append('Размер: <select id="for_textsize"></select><br>')
+		.append(lang[settings.lang].font_size+': <select id="for_textsize"></select><br>')
 		.find("#for_textsize")
 		.append('<option value="8">8 px</option>')
 		.append('<option value="9">9 px</option>')
@@ -57,43 +130,43 @@
 		.append('<option value="21">21 px</option>')
 		.append('<option value="22">22 px</option>')
 		.parent()
-		.append('Выравние: <select id="for_textalign"></select><br>')
+		.append(lang[settings.lang].align+': <select id="for_textalign"></select><br>')
 		.find("#for_textalign")
-		.append('<option value="left">По левому краю</option>')
-		.append('<option value="center">По центру</option>')
-		.append('<option value="right">По правому краю</option>')
+		.append('<option value="left">'+lang[settings.lang].align_left+'</option>')
+		.append('<option value="center">'+lang[settings.lang].align_center+'</option>')
+		.append('<option value="right">'+lang[settings.lang].settings_right+'</option>')
 		.parent()
-		.append('Цвет: <select id="for_textcolor"></select><br>')
+		.append(lang[settings.lang].color+': <select id="for_textcolor"></select><br>')
 		.find("#for_textcolor")
-		.append('<option value="black">Черный</option>')
-		.append('<option value="white">Белый</option>')
-		.append('<option value="red">Красный</option>')
-		.append('<option value="green">Зеленый</option>')
-		.append('<option value="blue">Синий</option>')
-		.append('<option value="yellow">Желтый</option>')
+		.append('<option value="black">'+lang[settings.lang].black+'</option>')
+		.append('<option value="white">'+lang[settings.lang].white+'</option>')
+		.append('<option value="red">'+lang[settings.lang].red+'</option>')
+		.append('<option value="green">'+lang[settings.lang].green+'</option>')
+		.append('<option value="blue">'+lang[settings.lang].blue+'</option>')
+		.append('<option value="yellow">'+lang[settings.lang].yellow+'</option>')
 		.parent()
 		.parent()
 		// <-- Добавления панели настроек текста
 
 		// Добавление панели настроек картинки
 		.find('.toolset.--image')
-		.append('Ссылка на картинку: <br><input type="text" value="" id="for_image_url"><br>')
+		.append(lang[settings.lang].img_src+': <br><input type="text" value="" id="for_image_url"><br>')
 		.parent()
 		// <-- Добавления панели настроек картинки
-		.append('<label>Задержка(мс): <input type="text" id="for_delay" /></label><br>')
+		.append('<label>'+lang[settings.lang].delay+': <input type="text" id="for_delay" /></label><br>')
 		.append('<select id="for_animation"></select><br>')
 		.find("#for_animation")
-		.append('<option value="none">Без анимации</option>')
-		.append('<option value="fade">Появление</option>')
-		.append('<option value="slideDown">Скольжение сверху</option>')
-		.append('<option value="slideUp">Скольжение снизу</option>')
-		.append('<option value="slideLeft">Скольжение слева</option>')
-		.append('<option value="slideRight">Скольжение справа</option>')
+		.append('<option value="none">'+lang[settings.lang].no_animation+'</option>')
+		.append('<option value="fade">'+lang[settings.lang].fade+'</option>')
+		.append('<option value="slideDown">'+lang[settings.lang].slide_down+'</option>')
+		.append('<option value="slideUp">'+lang[settings.lang].slide_up+'</option>')
+		.append('<option value="slideLeft">'+lang[settings.lang].slide_left+'</option>')
+		.append('<option value="slideRight">'+lang[settings.lang].slide_right+'</option>')
 		.parent()
-		.append('<label>Скорость анимации(мс): <input type="text" id="for_duration" /></label><br>')
-		.append('<button title="Посмотреть результат" class="tool-preview">Просмотр</button>')
+		.append('<label>'+lang[settings.lang].animation_duration+': <input type="text" id="for_duration" /></label><br>')
+		.append('<button class="tool-preview">'+lang[settings.lang].preview+'</button>')
 		.parent()
-		.append('<div class="layers"><div class="title">Элементы</div><ul>'+layersHTML+'</ul></div>').find(":not(.elements, .toolbars, .layers, .elements *, .toolbars *, .layers *)").remove();
+		.append('<div class="layers"><div class="title">'+lang[settings.lang].layers+'</div><ul>'+layersHTML+'</ul></div>').find(":not(.elements, .toolbars, .layers, .elements *, .toolbars *, .layers *)").remove();
 
 		currentActive = this.find(".elements .slide-element").removeClass('--active').last().addClass('--active')
 		if(currentActive.hasClass('--text'))
@@ -132,7 +205,7 @@
 			switch($this.find("#for_type").val()){
 				case 1,'1':
 					$this.find(".elements").append('<div class="slide-element --text" data-delay="0" data-duration="0" data-animation="none"><div class="move_bar"></div><div class="text_bar"></div></div>');
-					el = $this.find('.elements .slide-element').removeClass('--active').removeClass('--resize').last().addClass('--active').find(".text_bar").text('Текстовый элемент').parent();
+					el = $this.find('.elements .slide-element').removeClass('--active').removeClass('--resize').last().addClass('--active').find(".text_bar").text(lang[settings.lang].text_block).parent();
 				break;
 				case 2,'2':
 					$this.find(".elements").append('<div class="slide-element --image" data-delay="0" data-duration="0" data-animation="none"><div class="move_bar"></div><div class="image_bar"><img src="" /></div></div>');
