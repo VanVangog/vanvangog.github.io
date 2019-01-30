@@ -1,5 +1,4 @@
 # *Magic Slides*
-
 ---
 ## *About*
 ---
@@ -14,7 +13,6 @@ All blocks can be animated by using simple animations:
 * SlideUp
 * SlideLeft
 * SlideRight
-
 ---
 ## *Current Available functions*
 ---
@@ -33,7 +31,6 @@ All blocks can be animated by using simple animations:
 * Animation duration in ms
 * Delay before block animation in ms
 * Simple preview
-
 ---
 ## *Roadmap*
 ---
